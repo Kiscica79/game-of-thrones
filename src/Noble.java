@@ -12,5 +12,7 @@ public class Noble extends Character {
         this.wealth = wealth;
     }
 
+    public void getHouseAsString() {
 
+    }
 }
