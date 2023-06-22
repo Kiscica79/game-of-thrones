@@ -119,6 +119,7 @@ Készíts egy `Mortal` interfészt, ami tartalmaz egy `die()` metódust!
 Implementáld ezt a `Character` osztályban, hogy csökkenjen a populáció, ha meghal valaki!
 Próbáld ki!
 
+**ITT JÁROK!**
 ## What is dead may never die. But rises again, harder and stronger.
 Írd felül ezt a működést, ha nemes ember (`Noble`) hal meg, akkor írja ki 
 a ház(ai)nak a jelmondat(ai)t angolul!

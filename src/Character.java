@@ -4,12 +4,15 @@ public class Character {
     private String name;
     private final String birthPlace;
     private Gender gender;
+    private static int worldPopulation;
+
 
     public Character(String name, String birthPlace, Gender gender, House house) {
         this.name = name;
         this.birthPlace = birthPlace;
         this.gender = gender;
         this.house = house;
+        worldPopulation++;
     }
 
 
@@ -34,6 +37,15 @@ public class Character {
             this.gender = Gender.EUNUCH;
         }
     }
+
+    public static int getWorldPopulation() {
+        return worldPopulation;
+    }
+
+    public int die() {
+        return worldPopulation--;
+    }
+
 
 
 }
