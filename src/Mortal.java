@@ -1,4 +1,4 @@
-public interface Mortal {
-    public int die();
+public interface Mortal  {
+    void die();
 
 }

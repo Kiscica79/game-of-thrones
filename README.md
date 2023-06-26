@@ -119,7 +119,7 @@ Készíts egy `Mortal` interfészt, ami tartalmaz egy `die()` metódust!
 Implementáld ezt a `Character` osztályban, hogy csökkenjen a populáció, ha meghal valaki!
 Próbáld ki!
 
-**ITT JÁROK!**
+
 ## What is dead may never die. But rises again, harder and stronger.
 Írd felül ezt a működést, ha nemes ember (`Noble`) hal meg, akkor írja ki 
 a ház(ai)nak a jelmondat(ai)t angolul!
@@ -186,6 +186,7 @@ System.out.println(arya.getWeapons()); // [MeleeWeapon{type=DAGGER, name='Valyri
 
 Az attack() metódusnak, egyelőre nem kell csinálnia semmit (kivéve a lőszer csökkentését, ahol szükséges)!
 
+## Itt járok!!!!!!
 ## A Lannister always pays his debts.
 A nemes embereknél a vagyont (`wealth`) jelenleg egy egyszerű szám típussal jellemezzük,
 ám Westerosban nem csak egy féle pénznem van. Megkülönöztetünk arany (`golden`),
