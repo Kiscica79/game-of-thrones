@@ -9,13 +9,12 @@ import java.util.Map;
 import java.util.Set;
 
 public class Noble extends Character {
-    private Set<House> houses = new HashSet<>();
+    private final Set<House> houses = new HashSet<>();
     private Map<String, Integer> coins = new HashMap<>();
 
 
-    public Noble(String name, String birthPlace, Gender gender, Set<House> houses) {
+    public Noble(String name, String birthPlace, Gender gender) {
         super(name, birthPlace, gender);
-        this.houses = houses;
     }
 
     public void addCoins(String coinType, int amount) {
@@ -36,7 +35,6 @@ public class Noble extends Character {
                 case "copper" -> totalWealth += actual.getValue();
             }
         }
-
         return 0;
     }
 
@@ -47,15 +45,33 @@ public class Noble extends Character {
         }
     }
 
+    public void addHouse(House house) {
+        this.houses.add(house);
+    }
+
+    public void removeHouse(House house) {
+        this.houses.remove(house);
+    }
+
     public Set<House> getHouses() {
         return houses;
     }
 
 
-    public void getHouseAsString() {
-
+    public String getHouseAsString() {
+        String outHouses = "";
+        for (House house : houses) {
+            outHouses += house + " ";
+        }
+        return outHouses;
     }
 
+    @Override
+    public String toString() {
+        return getName() +
+                " of house(s) " + getHouseAsString() +
+                "has coins: " + coins;
+    }
 
 
 }

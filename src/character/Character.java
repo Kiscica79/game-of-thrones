@@ -8,12 +8,12 @@ import java.util.Set;
 
 public class Character implements Mortal {
 
-    private House house;
     private String name;
     private final String birthPlace;
     private Gender gender;
+    private House house;
     private static int worldPopulation;
-    private Set<Weapon> weapons = new HashSet<>();
+    private final Set<Weapon> weapons = new HashSet<>();
     private int health =100;
 
 
@@ -22,11 +22,7 @@ public class Character implements Mortal {
         this.birthPlace = birthPlace;
         this.gender = gender;
         worldPopulation++;
-
     }
-
-
-
 
     public String getName() {
         return name;
@@ -46,7 +42,7 @@ public class Character implements Mortal {
 
     public void setGender(Gender gender) {
         if (this.gender == Gender.MALE && gender == Gender.EUNUCH) {
-            this.gender = Gender.EUNUCH;
+            this.gender = gender;
         }
     }
 
@@ -63,7 +59,7 @@ public class Character implements Mortal {
     }
 
     public void die() {
-        System.out.println(worldPopulation--);
+        worldPopulation--;
     }
 
     public boolean hasWeapons() {

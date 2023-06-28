@@ -22,9 +22,9 @@ public enum House {
             "rose\n"),
     ;
 
-    private String angolNev;
-    private String magyarNev;
-    private String sigil;
+    private final String angolNev;
+    private final String magyarNev;
+    private final String sigil;
 
     House(String angolNev, String magyarNev, String sigil) {
         this.angolNev = angolNev;
