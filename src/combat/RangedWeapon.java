@@ -1,5 +1,6 @@
 package combat;
 
+import character.Character;
 import combat.type.RangedWeaponType;
 
 public class RangedWeapon extends Weapon {
@@ -12,8 +13,13 @@ public class RangedWeapon extends Weapon {
     }
 
     @Override
-    protected int attack() {
+    public int attack(Character character, Character enemy) {
         return ammunition--;
+    }
+
+    @Override
+    public boolean isRanged() {
+        return false;
     }
 
     @Override

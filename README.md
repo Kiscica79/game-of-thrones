@@ -186,7 +186,7 @@ System.out.println(arya.getWeapons()); // [MeleeWeapon{type=DAGGER, name='Valyri
 
 Az attack() metódusnak, egyelőre nem kell csinálnia semmit (kivéve a lőszer csökkentését, ahol szükséges)!
 
-## Itt járok!!!!!!
+
 ## A Lannister always pays his debts.
 A nemes embereknél a vagyont (`wealth`) jelenleg egy egyszerű szám típussal jellemezzük,
 ám Westerosban nem csak egy féle pénznem van. Megkülönöztetünk arany (`golden`),
@@ -216,6 +216,7 @@ public void removeCoins(String coinType, int amount) {
 }
 </pre></details>
 
+
 Ezen felül kelleni fog még egy `getWealth()` metódus is, ami visszaadja
 az érméink összértékét! Az egyszerűség kedvéért legyen
 - 1 arany = 100 bronz
@@ -233,6 +234,7 @@ cersei.addCoins("silver", 2); // 1+2 silver -> 30 copper
 cersei.addCoins("copper", 3); // 3 copper -> 3 copper
 System.out.println(cersei); // Cersei of house(s) LANNISTER, BARATHEON has 133 wealth in copper.
 ```
+
 
 <details><summary>Segítség</summary><p>
 Inicializálj egy totalWealth változót, adj neki értékül nullát!

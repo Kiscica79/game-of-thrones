@@ -1,4 +1,7 @@
 package combat;
+
+import character.Character;
+
 public abstract class Weapon {
 
     protected String name;
@@ -9,7 +12,9 @@ public abstract class Weapon {
     }
 
 
-    protected abstract int attack();
+    public abstract int attack(Character character, Character enemy);
+
+    public abstract boolean isRanged();
 
     @Override
     public String toString() {

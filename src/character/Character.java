@@ -1,3 +1,6 @@
+package character;
+import character.type.Gender;
+import character.type.House;
 import combat.Weapon;
 
 import java.util.HashSet;
@@ -11,16 +14,18 @@ public class Character implements Mortal {
     private Gender gender;
     private static int worldPopulation;
     private Set<Weapon> weapons = new HashSet<>();
+    private int health =100;
 
 
-    public Character(String name, String birthPlace, Gender gender, House house, Set<Weapon> weapons) {
+    public Character(String name, String birthPlace, Gender gender) {
         this.name = name;
         this.birthPlace = birthPlace;
         this.gender = gender;
-        this.house = house;
         worldPopulation++;
-        this.weapons = weapons;
+
     }
+
+
 
 
     public String getName() {
@@ -71,7 +76,28 @@ public class Character implements Mortal {
         weapons.remove(stolenBow);
     }
 
+    private void initiateFight(Weapon weapon, Character enemy, FightType fightType) {
+        String fightTypeName = fightType == FightType.MELEE ? "melee" : "ranged";
+        System.out.println(this.getName() + " engages in " + fightTypeName + " combat with " + enemy.getName() + ".");
+        weapon.attack(this, enemy);
+    }
+    public void fight(Character enemy, FightType fightType) {
+        if (this.hasWeapons()) {
+            for (Weapon weapon : this.getWeapons()) {
+                if ((fightType == FightType.MELEE && !weapon.isRanged()) ||
+                        (fightType == FightType.RANGED && weapon.isRanged())) {
+                    initiateFight(weapon, enemy, fightType);
+                }
+            }
+        } else {
+            System.out.println(this.getName() + " has no weapons to fight with.");
+        }
+    }
 
+    public void takeDamage(int damage) {
+        this.health -= damage;
+        System.out.println(this.getName() + "'s health dropped to " + this.health + "/100.");
+    }
 }
 
 

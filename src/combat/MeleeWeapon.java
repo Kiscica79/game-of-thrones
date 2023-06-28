@@ -1,5 +1,6 @@
 package combat;
 
+import character.Character;
 import combat.type.MeleeWeaponType;
 
 public class MeleeWeapon extends Weapon {
@@ -8,8 +9,13 @@ public class MeleeWeapon extends Weapon {
     }
 
     @Override
-    protected int attack() {
+    public int attack(Character character, Character enemy) {
         return 0;
+    }
+
+    @Override
+    public boolean isRanged() {
+        return false;
     }
 
     @Override

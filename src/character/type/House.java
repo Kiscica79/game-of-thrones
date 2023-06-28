@@ -1,3 +1,5 @@
+package character.type;
+
 public enum House {
 
     STARK("Winter is Coming\n",
