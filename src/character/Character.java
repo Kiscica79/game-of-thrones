@@ -1,4 +1,5 @@
 package character;
+
 import character.type.Gender;
 import character.type.House;
 import combat.Weapon;
@@ -14,7 +15,7 @@ public class Character implements Mortal {
     private House house;
     private static int worldPopulation;
     private final Set<Weapon> weapons = new HashSet<>();
-    private int health =100;
+    private int health = 100;
 
 
     public Character(String name, String birthPlace, Gender gender) {
@@ -58,6 +59,7 @@ public class Character implements Mortal {
         return worldPopulation;
     }
 
+    @Override
     public void die() {
         worldPopulation--;
     }
@@ -65,9 +67,11 @@ public class Character implements Mortal {
     public boolean hasWeapons() {
         return !weapons.isEmpty();
     }
+
     public void addWeapon(Weapon valyrianDagger) {
         weapons.add(valyrianDagger);
     }
+
     public void removeWeapon(String stolenBow) {
         weapons.remove(stolenBow);
     }
@@ -77,6 +81,7 @@ public class Character implements Mortal {
         System.out.println(this.getName() + " engages in " + fightTypeName + " combat with " + enemy.getName() + ".");
         weapon.attack(this, enemy);
     }
+
     public void fight(Character enemy, FightType fightType) {
         if (this.hasWeapons()) {
             for (Weapon weapon : this.getWeapons()) {

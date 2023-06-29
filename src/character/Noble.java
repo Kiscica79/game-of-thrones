@@ -35,7 +35,7 @@ public class Noble extends Character {
                 case "copper" -> totalWealth += actual.getValue();
             }
         }
-        return 0;
+        return totalWealth;
     }
 
     @Override
@@ -43,6 +43,7 @@ public class Noble extends Character {
         for (var actual : houses) {
             System.out.println(actual.getAngolNev());
         }
+        super.die();
     }
 
     public void addHouse(House house) {
